@@ -1,4 +1,5 @@
 import { Button, ButtonIcon } from "./components/Button";
+import Card from "./components/Card";
 
 function App() {
   return (
@@ -50,6 +51,40 @@ function App() {
           />
         </svg>
       </ButtonIcon>
+
+      {/*  */}
+
+      <Card
+        // image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        title="Card Title"
+        subtitle="ini subtitle"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente minima praesentium numquam ut nobis omnis similiq"
+        // button={<Button text={"Detail"} color="primary" fullWidth />}
+        // secondaryButton={<Button text={"Delete"} color="error" fullWidth />}
+        // ribbon="Discount"
+      />
+
+      <br />
+
+      <Card
+        // image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        title="Card Title"
+        subtitle="ini subtitle"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente minima praesentium numquam ut nobis omnis similiq"
+        button={<Button text={"Detail"} color="primary" fullWidth />}
+      />
+
+      <br />
+
+      <Card
+        image="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+        title="Card Title"
+        subtitle="ini subtitle"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente minima praesentium numquam ut nobis omnis similiq"
+        button={<Button text={"Detail"} color="primary" fullWidth />}
+        secondaryButton={<Button text={"Delete"} color="error" />}
+        ribbon="Discount"
+      />
     </>
   );
 }
