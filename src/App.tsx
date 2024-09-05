@@ -1,7 +1,14 @@
 import { Button, ButtonIcon } from "./components/Button";
 import Card from "./components/Card";
+import Table from "./components/Table";
 
 function App() {
+  const data = [
+    { no: 1, name: "Ilham", id: 101 },
+    { no: 2, name: "Aisyah", id: 102 },
+    { no: 3, name: "Zara", id: 103 },
+  ];
+
   return (
     <>
       {/* Buttons */}
@@ -85,6 +92,25 @@ function App() {
         secondaryButton={<Button text={"Delete"} color="error" />}
         ribbon="Discount"
       />
+
+      {/*  */}
+
+      <div className="px-20 mt-5">
+        <Table
+          thead={["No", "Name", "Action"]}
+          theadBg="gradient-dark"
+          tbody={data}
+          stripped
+          borderless
+          hovered
+          align="left"
+          actions={(row) => (
+            <a href={`/details/${row.id}`} className="text-blue-500">
+              Detail
+            </a>
+          )}
+        />
+      </div>
     </>
   );
 }

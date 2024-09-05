@@ -5,6 +5,7 @@ type ButtonProps = {
   color: "primary" | "secondary" | "success" | "error";
   size?: "sm" | "md" | "lg";
   fullWidth?: boolean;
+  autoline?: boolean;
   gradient?: boolean;
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
@@ -49,7 +50,7 @@ function Button({
 
   return (
     <button
-      className={`${colorClasses[color]} ${sizeClasses[size]} ${widthClasses} rounded-md text-white active:scale-95 flex gap-2 items-center ${addedClass}`}
+      className={`${colorClasses[color]} ${sizeClasses[size]} ${widthClasses} rounded text-white active:scale-95 flex gap-2 items-center ${addedClass}`}
     >
       {iconLeft}
       {text}
@@ -80,7 +81,7 @@ function ButtonIcon({ color, size = "md", children }: ButtonIconProps) {
 
   return (
     <button
-      className={`${colorClasses[color]} ${sizeClasses[size]} rounded-md text-white active:scale-95 flex items-center justify-center`}
+      className={`${colorClasses[color]} ${sizeClasses[size]} rounded text-white active:scale-95 flex items-center justify-center`}
     >
       {children}
     </button>
