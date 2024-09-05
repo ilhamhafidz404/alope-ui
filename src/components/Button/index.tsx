@@ -50,7 +50,7 @@ function Button({
 
   return (
     <button
-      className={`${colorClasses[color]} ${sizeClasses[size]} ${widthClasses} rounded text-white active:scale-95 flex gap-2 items-center ${addedClass}`}
+      className={`${colorClasses[color]} ${sizeClasses[size]} ${widthClasses} rounded text-white active:scale-95 flex gap-2 items-center justify-center ${addedClass}`}
     >
       {iconLeft}
       {text}
