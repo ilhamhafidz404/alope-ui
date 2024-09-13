@@ -1,6 +1,7 @@
 import { Button, ButtonIcon } from "./components/Button";
 import Card from "./components/Card";
 import Input from "./components/Input";
+import Select from "./components/Select";
 import Table from "./components/Table";
 
 function App() {
@@ -371,6 +372,25 @@ function App() {
             type="text"
             labelText="Test"
             placeholder="Test"
+          />
+
+          <Select
+            name="test"
+            labelText="Test"
+            options={[
+              {
+                value: "hhe",
+                name: "hhe",
+              },
+              {
+                value: "hhe",
+                name: "hhe",
+              },
+              {
+                value: "hhe",
+                name: "hhe",
+              },
+            ]}
           />
         </section>
       </div>
