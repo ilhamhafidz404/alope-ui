@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./../../assets/style.css";
+import "./../assets/style.css";
 
 interface TableProps {
   thead: string[];

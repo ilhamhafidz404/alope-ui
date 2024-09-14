@@ -1,4 +1,4 @@
-import "./../../assets/style.css";
+import "./../assets/style.css";
 
 type SelectProps = {
   name: string;

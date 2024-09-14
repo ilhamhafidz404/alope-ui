@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import "./../../assets/style.css";
+import "./../assets/style.css";
 
 type InputProps = {
   name: string;

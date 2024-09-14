@@ -1,8 +1,8 @@
-import { Button, ButtonIcon } from "./components/Button";
-import Card from "./components/Card";
-import Input from "./components/Input";
-import Select from "./components/Select";
-import Table from "./components/Table";
+import { Button, ButtonIcon } from "../Button";
+import Card from "../Card";
+import Input from "../Input";
+import Select from "../Select";
+import Table from "../Table";
 
 function App() {
   const data = [
