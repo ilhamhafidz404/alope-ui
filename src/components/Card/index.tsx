@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import "./../../assets/style.css";
+
 type CardProps = {
   image?: string;
   title: string;

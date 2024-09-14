@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import "./../../assets/style.css";
+
 type ButtonProps = {
   text: string;
   color: "primary" | "secondary" | "success" | "error";

@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./../../assets/style.css";
+
 interface TableProps {
   thead: string[];
   tbody: Array<{ [key: string]: any }>;
