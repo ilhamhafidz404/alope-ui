@@ -4,10 +4,11 @@ ALOPE UI is a simple and flexible component library for your React project. It i
 
 Components:
 
+- [Alert](https://github.com/ilhamhafidz404/alope-ui)
 - [Button](https://github.com/ilhamhafidz404/alope-ui)
 - [Card](https://github.com/ilhamhafidz404/alope-ui)
-- [Table](https://github.com/ilhamhafidz404/alope-ui)
 - [Form](https://github.com/ilhamhafidz404/alope-ui)
+- [Table](https://github.com/ilhamhafidz404/alope-ui)
 
 ## Instalation Guide
 
