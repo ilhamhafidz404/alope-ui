@@ -7,7 +7,15 @@ import AlertDocs from "./components/Alerts";
 import FormDocs from "./components/Forms";
 
 //
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  NavLink,
+} from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
 
 function App() {
   const data = [
@@ -18,46 +26,9 @@ function App() {
 
   return (
     <Router>
-      <nav className="flex justify-between items-center px-10 py-5 border-b fixed top-0 left-0 right-0 bg-white z-50">
-        <div>
-          <h1 className="text-xl font-semibold">🚀ALOPE UI</h1>
-        </div>
-        <div>
-          <a href="">See in GITHUB</a>
-        </div>
-      </nav>
-
+      <Navbar />
       <section className="grid grid-cols-6 px-10 mt-20">
-        <aside className="fixed top-20">
-          <h3 className="text-xl font-semibold">Components</h3>
-          <ul className="list-disc pl-5 mt-4">
-            <li>
-              <Link to="/alert" className="hover:text-indigo-500">
-                Alert
-              </Link>
-            </li>
-            <li>
-              <Link to="/button" className="hover:text-indigo-500">
-                Button
-              </Link>
-            </li>
-            <li>
-              <Link to="/card" className="hover:text-indigo-500">
-                Card
-              </Link>
-            </li>
-            <li>
-              <Link to="/form" className="hover:text-indigo-500">
-                Form
-              </Link>
-            </li>
-            <li>
-              <Link to="/table" className="hover:text-indigo-500">
-                Table
-              </Link>
-            </li>
-          </ul>
-        </aside>
+        <Sidebar />
         <div></div>
         <main className="col-span-5">
           <div className="container px-10 py-5">
