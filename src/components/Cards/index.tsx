@@ -12,7 +12,7 @@ export default function CardDocs() {
         more with support for multiple sizes, states, and more.
       </p>
       <Code
-        code={`import { Button } from "../../../Button";\nimport { Button, ButtonIcon } from "alope-ui/Button";`}
+        code={`import { Button } from "alope-ui/Button";\nimport { Button, ButtonIcon } from "alope-ui/Button";`}
         language="js"
       />
 

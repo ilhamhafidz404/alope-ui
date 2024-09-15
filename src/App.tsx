@@ -1,9 +1,6 @@
-import { Button } from "../Button";
-import Card from "../Card";
 import Input from "../Input";
 import Select from "../Select";
 import Table from "../Table";
-import Alert from "../Alert";
 
 // components
 import ButtonDocs from "./components/Buttons";
@@ -11,6 +8,7 @@ import ButtonDocs from "./components/Buttons";
 //
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import CardDocs from "./components/Cards";
+import AlertDocs from "./components/Alerts";
 
 function App() {
   const data = [
@@ -55,42 +53,7 @@ function App() {
         <main className="col-span-4">
           <div className="container px-10 py-5">
             <Routes>
-              <Route
-                path="/alert"
-                element={
-                  <section>
-                    <h2 className="text-2xl font-bold">Alerts</h2>
-                    <Alert
-                      text="lorem ipsum sit dolor"
-                      label="primary-alert"
-                      color="primary"
-                      icon={
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          className="size-6"
-                        >
-                          <path
-                            fill-rule="evenodd"
-                            d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                            clip-rule="evenodd"
-                          />
-                        </svg>
-                      }
-                      withClose
-                    />
-                    <Alert
-                      text="lorem ipsum sit dolor"
-                      color="secondary"
-                      withClose
-                      label="secondary-alert"
-                    />
-                    <Alert text="lorem ipsum sit dolor" color="error" />
-                    <Alert text="lorem ipsum sit dolor" color="success" />
-                  </section>
-                }
-              />
+              <Route path="/alert" element={<AlertDocs />} />
               <Route path="/button" element={<ButtonDocs />} />
               <Route path="/card" element={<CardDocs />} />
               <Route
