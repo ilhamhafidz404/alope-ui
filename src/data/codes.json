@@ -16,5 +16,11 @@
     "simple": "<Alert text=\"Simple Alert Primary\" color=\"primary\" /> \n<Alert text=\"Simple Alert Secondary\" color=\"secondary\" />\n<Alert text=\"Simple Alert Error\" color=\"error\" />\n<Alert text=\"Simple Alert Success\" color=\"success\" />",
     "withIcon": "<Alert text=\"lorem ipsum sit dolor\" color=\"error\" icon={...} />",
     "withClose": "<Alert text=\"lorem ipsum sit dolor\" color=\"primary\" withClose label=\"primary-alert\" />"
+  },
+  "forms": {
+    "simpleInput": "<Input name=\"alope-ui\" type=\"text\" labelText=\"Alope UI\" /> \n<Input name=\"alope-ui\" type=\"text\" placeholder=\"Without Label\" />",
+    "floatingLabelInput": "<Input name=\"alope-ui\" type=\"text\" labelText=\"Alope UI\" floatingLabel />",
+    "withIconInput": "<Input \n\tname=\"alope-ui\" \n\ttype=\"text\" \n\tlabelText=\"Input with Icon\" \n\tplaceholder=\"This is Placeholder\" \n\trightIcon={...} \n/>",
+    "simpleSelect": "<Select \n\tname=\"alope-ui\" \n\tlabelText=\"What do you thing about ALOPE UI\" \n\toptions={[\n\t\t{\n\t\t\tvalue: \"Amazing\",\n\t\t\tname: \"Amazing\", \n\t\t}\n\t ]} \n/>"
   }
 }
