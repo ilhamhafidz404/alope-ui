@@ -4,6 +4,8 @@ import Input from "../Input";
 import Select from "../Select";
 import Table from "../Table";
 import Alert from "../Alert";
+import Toast from "../Toast";
+import { useState } from "react";
 
 function App() {
   const data = [
@@ -11,6 +13,8 @@ function App() {
     { no: 2, name: "Aisyah", id: 102 },
     { no: 3, name: "Zara", id: 103 },
   ];
+
+  const [toast, setToast] = useState(false);
 
   return (
     <>
@@ -75,13 +79,13 @@ function App() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
                     className="size-6"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                     />
                   </svg>
@@ -95,13 +99,13 @@ function App() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
                     className="size-6"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                     />
                   </svg>
@@ -115,13 +119,13 @@ function App() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
                     className="size-6"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                     />
                   </svg>
@@ -131,13 +135,13 @@ function App() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
                     className="size-6"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                     />
                   </svg>
@@ -180,13 +184,13 @@ function App() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 className="size-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
                 />
               </svg>
@@ -358,13 +362,13 @@ function App() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="currentColor"
                 className="size-6"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
                 />
               </svg>
@@ -399,7 +403,7 @@ function App() {
 
         {/*  */}
 
-        <section>
+        <section className="mb-5">
           <h2 className="text-2xl font-bold">Alerts</h2>
           <Alert
             text="lorem ipsum sit dolor"
@@ -413,9 +417,9 @@ function App() {
                 className="size-6"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </svg>
             }
@@ -429,6 +433,61 @@ function App() {
           />
           <Alert text="lorem ipsum sit dolor" color="error" />
           <Alert text="lorem ipsum sit dolor" color="success" />
+        </section>
+
+        {/*  */}
+
+        <section className="mb-5">
+          <h2 className="text-2xl font-bold">Toast</h2>
+
+          <button
+            onClick={() => {
+              setToast(true);
+            }}
+          >
+            Show Toast
+          </button>
+
+          <Toast
+            isShow={toast}
+            setIsShow={(isShow: boolean) => {
+              setToast(isShow);
+            }}
+            type="success"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id dolorum laboriosam sequi quaerat rem quo magnam veniam molestias temporibus!"
+            showTime={5000}
+            position="bottom-right"
+          />
+          <Toast
+            isShow={toast}
+            setIsShow={(isShow: boolean) => {
+              setToast(isShow);
+            }}
+            type="error"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id dolorum laboriosam sequi quaerat rem quo magnam veniam molestias temporibus!"
+            showTime={5000}
+            position="bottom-right"
+          />
+          <Toast
+            isShow={toast}
+            setIsShow={(isShow: boolean) => {
+              setToast(isShow);
+            }}
+            type="warning"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id dolorum laboriosam sequi quaerat rem quo magnam veniam molestias temporibus!"
+            showTime={5000}
+            position="bottom-right"
+          />
+          <Toast
+            isShow={toast}
+            setIsShow={(isShow: boolean) => {
+              setToast(isShow);
+            }}
+            type="default"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic id dolorum laboriosam sequi quaerat rem quo magnam veniam molestias temporibus!"
+            showTime={5000}
+            position="bottom-right"
+          />
         </section>
       </div>
     </>

@@ -2,7 +2,11 @@
   "name": "alope-ui",
   "private": false,
   "license": "alope.id",
-  "version": "1.0.4",
+  "version": "1.1.0",
+  "keywords": [
+    "react",
+    "react-components"
+  ],
   "description": "UI React for ALOPE Team",
   "type": "module",
   "scripts": {

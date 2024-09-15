@@ -1,6 +1,6 @@
 # 🚀ALOPE UI
 
-ALOPE UI is a simple and flexible component library for your React project. It is built using Vite, ESLint and Tailwind CSS for fast development and clean code.
+ALOPE UI is a simple and flexible component library for your React project. It is built with Vite, ESLint, Tailwind CSS, and uses Heroicons for icons, enabling fast development and clean code.
 
 Components:
 
@@ -9,6 +9,7 @@ Components:
 - [Card](https://github.com/ilhamhafidz404/alope-ui)
 - [Form](https://github.com/ilhamhafidz404/alope-ui)
 - [Table](https://github.com/ilhamhafidz404/alope-ui)
+- [Toast](https://github.com/ilhamhafidz404/alope-ui)
 
 ## Instalation Guide
 
