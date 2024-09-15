@@ -19,6 +19,10 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ilhamhafidz404/alope-ui"
+  },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
