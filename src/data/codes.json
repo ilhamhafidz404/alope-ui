@@ -6,5 +6,10 @@
     "fullwidth": "<Button text=\"Full Width Button\" color=\"primary\" fullWidth />",
     "withIcon": "<Button text=\"Left Icon\" color=\"primary\" iconLeft={...} />\n<Button text=\"Right Icon\" color=\"primary\" iconRight={...} />\n<Button text=\"Left & Right Icon\" color=\"primary\" iconLeft={...} iconRight={...} />",
     "onlyIcon": "<ButtonIcon color=\"primary\">{yourIcon()}</ButtonIcon>"
+  },
+  "cards": {
+    "simple": "<Card \n\ttitle=\"Card Title\"\n\tsubtitle=\"ini subtitle\" \n\tdescription=\"...\"\n/>",
+    "withButton": "<Card \n\ttitle=\"Card Title\" \n\tsubtitle=\"ini subtitle\" \n\tdescription=\"...\" \n\tbutton={<Button text={\"Detail\"} color=\"primary\" fullWidth />}  \n/> \n\n<Card \n\ttitle=\"Card Title\" \n\tsubtitle=\"ini subtitle\" \n\tdescription=\"...\" \n\tbutton={<Button text={\"Detail\"} color=\"primary\" fullWidth />} \n\tsecondaryButton={<Button text={\"Delete\"} color=\"error\"/>} \n/>\n\n<Card \n\ttitle=\"Card Title\" \n\tsubtitle=\"ini subtitle\" \n\tdescription=\"...\" \n\tbutton={<Button text={\"Detail\"} color=\"primary\" fullWidth />} \n\tsecondaryButton={<Button text={\"Delete\"} color=\"error\"  />} \n\tsecondaryButtonOnLeft\n/>",
+    "withImage": "<Card \n\timage=\"...\" \n\ttitle=\"Card Title\" \n\tsubtitle=\"ini subtitle\" \n\tdescription=\"...\" \n\tbutton={<Button text={\"Detail\"} color=\"primary\" fullWidth />} \n\tsecondaryButton={<Button text={\"Delete\"} color=\"error\" />} \n\tribbon=\"Discount\" \n/>  \n\n<Card \n\timage=\"...\" \n\ttitle=\"Card Title\" \n\tsubtitle=\"ini subtitle\" \n\tdescription=\"...\" \n\tbutton={<Button text={\"Detail\"} color=\"primary\" fullWidth />} \n\tsecondaryButton={<Button text={\"Delete\"} color=\"error\" />} \n\tsecondaryButtonOnLeft \n/>"
   }
 }

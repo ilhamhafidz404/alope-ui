@@ -13,4 +13,13 @@ export default defineConfig({
       css: true,
     }),
   ],
+  server: {
+    // middlewareMode: "ssr", // Atur mode middleware untuk server-side rendering
+    watch: {
+      usePolling: true,
+    },
+    fs: {
+      allow: [".."],
+    },
+  },
 });
