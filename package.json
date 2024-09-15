@@ -2,7 +2,7 @@
   "name": "alope-ui",
   "private": false,
   "license": "alope.id",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "keywords": [
     "react",
     "react-components"
@@ -22,6 +22,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ilhamhafidz404/alope-ui"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
