@@ -22,5 +22,11 @@
     "floatingLabelInput": "<Input name=\"alope-ui\" type=\"text\" labelText=\"Alope UI\" floatingLabel />",
     "withIconInput": "<Input \n\tname=\"alope-ui\" \n\ttype=\"text\" \n\tlabelText=\"Input with Icon\" \n\tplaceholder=\"This is Placeholder\" \n\trightIcon={...} \n/>",
     "simpleSelect": "<Select \n\tname=\"alope-ui\" \n\tlabelText=\"What do you thing about ALOPE UI\" \n\toptions={[\n\t\t{\n\t\t\tvalue: \"Amazing\",\n\t\t\tname: \"Amazing\", \n\t\t}\n\t ]} \n/>"
+  },
+  "tables": {
+    "simple": "<Table \n\tthead={[\"No\", \"Name\"]} \n\ttbody={[\n\t\t{no: 1, name:\" Ilham\"},\n\t\t{no: 2, name: \"Hafidz\"}\n\t]} \n\talign=\"left\" \n/>",
+    "stripped": "<Table \n\tthead={[\"No\", \"Name\"]} \n\ttbody={[\n\t\t{no: 1, name:\" Ilham\"},\n\t\t{no: 2, name: \"Hafidz\"}\n\t]} \n\talign=\"left\" \n\tstripped\n/>",
+    "borderlessAndHovered": "<Table \n\tthead={[\"No\", \"Name\"]} \n\ttbody={[\n\t\t{no: 1, name:\" Ilham\"},\n\t\t{no: 2, name: \"Hafidz\"}\n\t]} \n\talign=\"left\" \n\tstripped \n\tborderless \n\thovered\n/>",
+    "withAction": "<Table \n\tthead={[\"No\", \"Name\"]} \n\ttbody={[\n\t\t{no: 1, name:\" Ilham\"},\n\t\t{no: 2, name: \"Hafidz\"}\n\t]} \n\talign=\"left\" \n\tstripped \n\tborderless \n\thovered \n\tactions={(row) => (\n\t\t<a href={`/details/${row.id}`} className=\"text-blue-500\">\n\t\t\tDetail\n\t\t</a>\n\t)}\n/>"
   }
 }
