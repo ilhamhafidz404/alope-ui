@@ -27,29 +27,39 @@ function App() {
         </div>
       </nav>
 
-      <section className="grid grid-cols-5 px-10 mt-20">
+      <section className="grid grid-cols-6 px-10 mt-20">
         <aside className="fixed top-20">
-          <ul>
-            <li>Instalation Guide</li>
+          <h3 className="text-xl font-semibold">Components</h3>
+          <ul className="list-disc pl-5 mt-4">
             <li>
-              <Link to="/alert">Alert</Link>
+              <Link to="/alert" className="hover:text-indigo-500">
+                Alert
+              </Link>
             </li>
             <li>
-              <Link to="/button">Button</Link>
+              <Link to="/button" className="hover:text-indigo-500">
+                Button
+              </Link>
             </li>
             <li>
-              <Link to="/card">Card</Link>
+              <Link to="/card" className="hover:text-indigo-500">
+                Card
+              </Link>
             </li>
             <li>
-              <Link to="/form">Form</Link>
+              <Link to="/form" className="hover:text-indigo-500">
+                Form
+              </Link>
             </li>
             <li>
-              <Link to="/table">Table</Link>
+              <Link to="/table" className="hover:text-indigo-500">
+                Table
+              </Link>
             </li>
           </ul>
         </aside>
         <div></div>
-        <main className="col-span-4">
+        <main className="col-span-5">
           <div className="container px-10 py-5">
             <Routes>
               <Route path="/alert" element={<AlertDocs />} />
