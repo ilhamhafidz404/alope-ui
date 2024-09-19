@@ -1,5 +1,5 @@
 {
-  "name": "alope-ui",
+  "name": "@ilhamhafidz404/alope-ui",
   "private": false,
   "license": "alope.id",
   "version": "1.1.1",
@@ -21,10 +21,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ilhamhafidz404/alope-ui"
+    "url": "git+https://github.com/ilhamhafidz404/alope-ui.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

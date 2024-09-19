@@ -104,6 +104,8 @@ import { Button, ButtonIcon } from "alope-ui/Button";
 
 ```jsx
 <ButtonIcon color="primary">{yourIcon()}</ButtonIcon>
+
+<ButtonIcon color="primary" fullRounded>{yourIcon()}</ButtonIcon>
 ```
 
 ### CARD
