@@ -2,7 +2,7 @@
   "name": "@ilhamhafidz404/alope-ui",
   "private": false,
   "license": "alope.id",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "keywords": [
     "react",
     "react-components"
@@ -17,7 +17,8 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0"
   },
   "repository": {
     "type": "git",

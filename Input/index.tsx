@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 
-import "./../assets/style.css";
-
 type InputProps = {
   name: string;
   type: string;
@@ -9,6 +7,8 @@ type InputProps = {
   labelText?: string;
   floatingLabel?: boolean;
   rightIcon?: ReactNode;
+  leftIcon?: ReactNode;
+  onChangeValue?: (e: string) => void;
 };
 
 export default function Input({
@@ -17,20 +17,30 @@ export default function Input({
   placeholder,
   labelText,
   floatingLabel,
+  leftIcon,
   rightIcon,
+  onChangeValue,
 }: InputProps) {
   const commonInputClass =
     "w-full text-sm rounded-md border focus:outline-none focus:ring-0 focus:border-blue-600";
+
+  const baseIconClass =
+    "absolute -translate-y-1/2 h-full flex items-center p-3 top-1/2";
 
   const inputElement = (
     <input
       id={name.toLowerCase()}
       name={name}
       type={type}
-      className={`py-2.5 px-3 peer ${commonInputClass}`}
+      className={`py-2.5 px-3 peer ${commonInputClass} ${leftIcon && "pl-12"}`}
       placeholder={
         floatingLabel ? " " : !floatingLabel && placeholder ? placeholder : ""
       }
+      onChange={(e) => {
+        if (onChangeValue) {
+          onChangeValue(e.target.value);
+        }
+      }}
     />
   );
 
@@ -50,9 +60,16 @@ export default function Input({
         {labelText}
       </label>
       <div className="relative">
+        {leftIcon && (
+          <div className={`${baseIconClass} left-0 rounded-l-md text-gray-700`}>
+            {leftIcon}
+          </div>
+        )}
         {inputElement}
         {rightIcon && (
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 bg-blue-500 h-full flex items-center p-3 rounded-r-md text-white">
+          <div
+            className={`${baseIconClass} right-0 bg-indigo-500 rounded-r-md text-white`}
+          >
             {rightIcon}
           </div>
         )}

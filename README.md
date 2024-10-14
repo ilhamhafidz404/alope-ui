@@ -8,6 +8,7 @@ Components:
 - [Button](https://github.com/ilhamhafidz404/alope-ui)
 - [Card](https://github.com/ilhamhafidz404/alope-ui)
 - [Form](https://github.com/ilhamhafidz404/alope-ui)
+- [Navbar](https://github.com/ilhamhafidz404/alope-ui)
 - [Table](https://github.com/ilhamhafidz404/alope-ui)
 - [Toast](https://github.com/ilhamhafidz404/alope-ui)
 
@@ -67,6 +68,8 @@ import { Button, ButtonIcon } from "alope-ui/Button";
 <Button text="Secondary" color="secondary" />
 <Button text="Error" color="error" />
 <Button text="Success" color="success" />
+<Button text="Light" color="light" />
+<Button text="Dark" color="dark" />
 ```
 
 - Gradient Button
@@ -76,6 +79,8 @@ import { Button, ButtonIcon } from "alope-ui/Button";
 <Button text="Secondary" color="secondary" gradient />
 <Button text="Error" color="error" gradient />
 <Button text="Success" color="success" gradient />
+<Button text="Light" color="light" gradient/>
+<Button text="Dark" color="dark" gradient/>
 ```
 
 - Custom Size Button
@@ -197,9 +202,16 @@ import Select from "alope-ui/Select";
 <Input name="alope-ui" type="text" labelText="Alope UI" floatingLabel />
 ```
 
-- Input with Right Icon
+- Input with Icon
 
 ```jsx
+<Input
+	name="alope-ui"
+	type="text"
+	labelText="Input with Icon"
+	placeholder="This is Placeholder"
+	leftIcon={...}
+/>
 <Input
 	name="alope-ui"
 	type="text"
@@ -219,6 +231,113 @@ import Select from "alope-ui/Select";
     {
       value: "Amazing",
       name: "Amazing",
+    },
+  ]}
+/>
+```
+
+### NAVBAR
+
+⚠️Requirement import
+
+```jsx
+import Navbar from "../Navbar";
+```
+
+- Simple Navbar
+
+```jsx
+<Navbar
+  title={"ALOPE"}
+  links={[
+    {
+      placeholder: "Home",
+      to: "/",
+    },
+    {
+      placeholder: "About",
+      to: "/about",
+    },
+    {
+      placeholder: "Product",
+      to: "/product",
+    },
+  ]}
+  stickyTop={false}
+/>
+```
+
+- Sticky with Navbar Icon / Logo
+
+```jsx
+<Navbar
+  title={"ALOPE"}
+  logo={...}
+  links={[
+    {
+      placeholder: "Home",
+      to: "/",
+    },
+    {
+      placeholder: "About",
+      to: "/about",
+    },
+    {
+      placeholder: "Product",
+      to: "/product",
+    },
+  ]}
+  stickyTop
+/>
+```
+
+- Navbar with Search
+
+```jsx
+<Navbar
+  title={"ALOPE"}
+  logo={...}
+  links={[
+    {
+      placeholder: "Home",
+      to: "/",
+    },
+    {
+      placeholder: "About",
+      to: "/about",
+    },
+    {
+      placeholder: "Product",
+      to: "/product",
+    },
+  ]}
+  stickyTop
+  bg={"transparent"}
+  withSearchBar
+  searchItems={[
+    {
+      img: "...",
+      title: "Title Card",
+      description: "description",
+      actionClick: "/",
+    },
+    {
+      img: "...",
+      title: "Title Card",
+      description: "description",
+      actionClick: "/",
+    },
+    {
+      img: "...",
+      title: "Title Card",
+      description: "description",
+      actionClick: "/",
+    },
+    {
+      img: "...",
+      title: "Title Card",
+      description: "description",
+      actionClick: "/",
     },
   ]}
 />
