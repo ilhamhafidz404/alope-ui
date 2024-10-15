@@ -1,10 +1,11 @@
 import { ReactNode, useState } from "react";
 import { NavLink } from "react-router-dom";
 import NavbarSearchBox from "./searchBox";
+import NavbarFullscreeenNav from "./fullscreeenNav";
 import Input from "../Input";
 
 interface navLinks {
-  placeholder: String;
+  placeholder: string;
   to: string;
 }
 
@@ -16,7 +17,7 @@ interface searchItems {
 }
 
 type NavbarProps = {
-  title: String;
+  title: string;
   logo?: ReactNode;
   links: navLinks[];
   stickyTop?: boolean;
@@ -53,65 +54,142 @@ export default function Navbar({
     dark: "bg-gray-800 text-gray-100",
   };
 
+  //
+  const [isShowFSNav, setIsShowFSNav] = useState<boolean>(false);
+
   return (
-    <nav
-      className={`z-50 flex justify-between px-10 py-5 items-center shadow ${
-        backDropBlur && "backdrop-blur"
-      } ${stickyTop && "sticky top-0 left-0 right-0"} ${bg && bgClass[bg]}`}
-    >
-      <div className="flex gap-2">
-        {logo}
-        <h5 className="font-bold text-xl">{title}</h5>
-      </div>
-      {withSearchBar && (
-        <div className="w-1/3 text-gray-800 relative">
-          <Input
-            name="wef"
-            type="text"
-            placeholder="Search your favorite"
-            leftIcon={
-              <>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="size-6"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </>
-            }
-            onChangeValue={(e) => setSearch(e)}
-          />
-          <NavbarSearchBox
-            searchItems={searchItems || []}
-            search={search}
-            bg={bg ? bg : "light"}
-          />
+    <>
+      <nav
+        className={`z-50 flex justify-between py-5 items-center shadow xl:px-20 md:px-10 px-3 ${
+          backDropBlur && "backdrop-blur"
+        } ${stickyTop && "sticky top-0 left-0 right-0"} ${bg && bgClass[bg]}`}
+      >
+        <div className="flex gap-2">
+          {logo}
+          <h5 className="font-bold text-xl">{title}</h5>
         </div>
-      )}
-      <div className="hidden xl:block">
-        <ul className="flex gap-5 font-medium">
-          {links.map((link) => (
-            <li>
-              <NavLink
-                to={link.to}
-                className={({ isActive }) =>
-                  `${baseClass} ${addedHoverClass} ${
-                    isActive ? addedActiveClass : ""
-                  }`
-                }
-              >
-                {link.placeholder}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+        {withSearchBar && (
+          <div className="w-1/3 text-gray-800 relative hidden lg:block">
+            <Input
+              name="wef"
+              type="text"
+              placeholder="Search your favorite"
+              leftIcon={<SearchIcon />}
+              onChangeValue={(e) => setSearch(e)}
+            />
+            <NavbarSearchBox
+              searchItems={searchItems || []}
+              search={search}
+              bg={bg ? bg : "light"}
+            />
+          </div>
+        )}
+        <div className="hidden lg:block">
+          <ul className="flex gap-5 font-medium">
+            {links.map((link) => (
+              <li>
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `${baseClass} ${addedHoverClass} ${
+                      isActive ? addedActiveClass : ""
+                    }`
+                  }
+                >
+                  {link.placeholder}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/*  */}
+        <div className="lg:hidden flex gap-5">
+          {withSearchBar && (
+            <button>
+              <SearchIcon />
+            </button>
+          )}
+          <div
+            className={`p-1 rounded-md cursor-pointer ${
+              bg == "dark" ? "hover:bg-gray-700" : "hover:bg-gray-200"
+            }`}
+            onClick={() => setIsShowFSNav(!isShowFSNav)}
+          >
+            {!isShowFSNav ? <HamburgerIcon /> : <CloseIcon />}
+          </div>
+        </div>
+      </nav>
+
+      <NavbarFullscreeenNav
+        isShow={isShowFSNav}
+        links={links}
+        addedActiveClass={addedActiveClass}
+        baseClass={baseClass}
+        addedHoverClass={addedHoverClass}
+        bg={bg}
+        hiddenFullscreenNav={() => setIsShowFSNav(false)}
+      />
+    </>
   );
 }
+
+const SearchIcon = () => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="size-6"
+      >
+        <path
+          fillRule="evenodd"
+          d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </>
+  );
+};
+
+const HamburgerIcon = () => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="size-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </svg>
+    </>
+  );
+};
+
+const CloseIcon = () => {
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="size-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      </svg>
+    </>
+  );
+};
