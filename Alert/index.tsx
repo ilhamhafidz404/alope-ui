@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import "./../assets/style.css";
+
 type AlertProps = {
   text: string;
   label?: string;

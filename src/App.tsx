@@ -1,4 +1,5 @@
 import { Button, ButtonIcon } from "../Button";
+import Header from "../Header";
 import Card from "../Card";
 import Input from "../Input";
 import Select from "../Select";
@@ -50,7 +51,7 @@ function App() {
         ]}
         stickyTop
         backDropBlur
-        bg={"dark"}
+        bg={"transparent"}
         withSearchBar
         searchItems={[
           {
@@ -85,12 +86,55 @@ function App() {
       />
 
       <Routes>
-        <Route path="/" element={<></>} />
+        <Route
+          path="/"
+          element={
+            <>
+              <Header
+                bgUrl="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                logoUrl="https://hybrid.uniku.ac.id/pluginfile.php/1/core_admin/logo/0x200/1728397345/HYBRID%20LEARNING%20%281%29.png"
+                title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora facere suscipit placeat eligendi doloremque. Aspernatur, culpa officiis ipsam facere saepe at perferendis est. Corporis adipisci at quibusdam saepe reprehenderit harum!"
+                actions={[
+                  {
+                    placeholder: "Test",
+                    buttonColor: "primary",
+                    to: "/",
+                  },
+                  {
+                    placeholder: "Test 2",
+                    buttonColor: "light",
+                    to: "/",
+                  },
+                ]}
+              />
+            </>
+          }
+        />
         <Route
           path="/about"
           element={
             <div className="container px-10 py-5">
               <h1 className="text-3xl font-bold">🚀ALOPE UI</h1>
+
+              <Header
+                bgUrl="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                logoUrl="https://hybrid.uniku.ac.id/pluginfile.php/1/core_admin/logo/0x200/1728397345/HYBRID%20LEARNING%20%281%29.png"
+                title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora facere suscipit placeat eligendi doloremque. Aspernatur, culpa officiis ipsam facere saepe at perferendis est. Corporis adipisci at quibusdam saepe reprehenderit harum!"
+                actions={[
+                  {
+                    placeholder: "Test",
+                    buttonColor: "primary",
+                    to: "/",
+                  },
+                  {
+                    placeholder: "Test 2",
+                    buttonColor: "light",
+                    to: "/",
+                  },
+                ]}
+              />
 
               <hr className="my-5" />
               <section className="mb-5">

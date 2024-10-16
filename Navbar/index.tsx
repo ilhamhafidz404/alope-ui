@@ -5,6 +5,8 @@ import NavbarFullscreeenNav from "./fullscreeenNav";
 import NavbarSearchBoxDialog from "./searchBoxDialog";
 import Input from "../Input";
 
+import "./../assets/style.css";
+
 interface navLinks {
   placeholder: string;
   to: string;
@@ -26,6 +28,7 @@ type NavbarProps = {
   bg?: "light" | "dark" | "transparent";
   withSearchBar?: boolean;
   searchItems?: searchItems[];
+  // textColor?: "dark" | "light";
 };
 
 export default function Navbar({
@@ -37,7 +40,8 @@ export default function Navbar({
   bg = "transparent",
   withSearchBar = false,
   searchItems,
-}: NavbarProps) {
+}: // textColor = "light",
+NavbarProps) {
   const [search, setSearch] = useState("");
 
   const baseClass =
@@ -55,6 +59,11 @@ export default function Navbar({
     dark: "bg-gray-800 text-gray-100",
   };
 
+  // const textColorClass = {
+  //   light: "text-gray-100",
+  //   dark: "text-gray-900",
+  // };
+
   //
   const [isShowFSNav, setIsShowFSNav] = useState<boolean>(false);
   const [isShowDialogSearch, setIsShowDialogSearch] = useState<boolean>(false);
@@ -64,7 +73,7 @@ export default function Navbar({
       <nav
         className={`z-50 flex justify-between py-5 items-center shadow xl:px-20 md:px-10 px-3 ${
           backDropBlur && "backdrop-blur"
-        } ${stickyTop && "sticky top-0 left-0 right-0"} ${bg && bgClass[bg]}`}
+        } ${stickyTop && "fixed top-0 left-0 right-0"} ${bg && bgClass[bg]}`}
       >
         <div className="flex gap-2">
           {logo}

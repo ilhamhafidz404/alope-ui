@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+import "./../assets/style.css";
+
 type ToastProps = {
   isShow: boolean;
   type: "error" | "success" | "warning" | "default";

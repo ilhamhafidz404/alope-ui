@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
 
+import "./../assets/style.css";
+
 interface searchItems {
   img: string;
   title: string;

@@ -1,6 +1,8 @@
 import Input from "../Input";
 import NavbarSearchBox from "./searchBox";
 
+import "./../assets/style.css";
+
 interface searchItems {
   img: string;
   title: string;
