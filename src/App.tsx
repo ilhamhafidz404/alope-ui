@@ -50,7 +50,7 @@ function App() {
         ]}
         stickyTop
         backDropBlur
-        bg={"light"}
+        bg={"dark"}
         withSearchBar
         searchItems={[
           {

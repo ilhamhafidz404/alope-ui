@@ -32,30 +32,32 @@ export default function NavbarSearchBox({
         {searchItems.slice(0, 3).map((item) => (
           <NavLink
             to={item.actionClick}
-            className={`flex gap-4 items-center p-3 ${bgClasses[bg]}`}
+            className={`flex md:flex-row flex-col gap-4 items-center p-3 ${bgClasses[bg]}`}
           >
             <img
               src={item.img}
               alt=""
-              className="rounded w-1/3 h-[100px] object-cover"
+              className="rounded md:w-1/3 w-full h-[100px] object-cover md:inline-block hidden"
             />
             <div className="w-full">
-              <p className="font-semibold">{item.title}</p>
-              <p className="text-gray-500 text-sm">{item.description}</p>
+              <p className="font-semibold md:text-base text-sm">{item.title}</p>
+              <p className="text-gray-500 md:text-sm text-sm">
+                {item.description}
+              </p>
             </div>
           </NavLink>
         ))}
         <hr className={`${bgClasses[bg]}`} />
         <a
           href=""
-          className={`p-3 flex justify-between text-indigo-500 rounded-b-md ${bgClasses[bg]}`}
+          className={`p-3 flex justify-between text-indigo-500 rounded-b-md md:text-base text-sm ${bgClasses[bg]}`}
         >
           <span>Lihat Selengkapnya</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="size-6"
+            className="md:size-6 size-4"
           >
             <path
               fillRule="evenodd"

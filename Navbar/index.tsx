@@ -2,6 +2,7 @@ import { ReactNode, useState } from "react";
 import { NavLink } from "react-router-dom";
 import NavbarSearchBox from "./searchBox";
 import NavbarFullscreeenNav from "./fullscreeenNav";
+import NavbarSearchBoxDialog from "./searchBoxDialog";
 import Input from "../Input";
 
 interface navLinks {
@@ -56,6 +57,7 @@ export default function Navbar({
 
   //
   const [isShowFSNav, setIsShowFSNav] = useState<boolean>(false);
+  const [isShowDialogSearch, setIsShowDialogSearch] = useState<boolean>(false);
 
   return (
     <>
@@ -105,7 +107,12 @@ export default function Navbar({
         {/*  */}
         <div className="lg:hidden flex gap-5">
           {withSearchBar && (
-            <button>
+            <button
+              className={`p-1 rounded-md cursor-pointer ${
+                bg == "dark" ? "hover:bg-gray-700" : "hover:bg-gray-200"
+              }`}
+              onClick={() => setIsShowDialogSearch(!isShowDialogSearch)}
+            >
               <SearchIcon />
             </button>
           )}
@@ -119,6 +126,14 @@ export default function Navbar({
           </div>
         </div>
       </nav>
+
+      <NavbarSearchBoxDialog
+        isShow={isShowDialogSearch}
+        searchItems={searchItems || []}
+        search={search}
+        bg={bg ? bg : "light"}
+        changeSearchValue={(e) => setSearch(e)}
+      />
 
       <NavbarFullscreeenNav
         isShow={isShowFSNav}
