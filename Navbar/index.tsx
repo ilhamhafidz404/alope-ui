@@ -28,7 +28,7 @@ type NavbarProps = {
   bg?: "light" | "dark" | "transparent";
   withSearchBar?: boolean;
   searchItems?: searchItems[];
-  // textColor?: "dark" | "light";
+  textColor?: "dark" | "light";
 };
 
 export default function Navbar({
@@ -40,8 +40,8 @@ export default function Navbar({
   bg = "transparent",
   withSearchBar = false,
   searchItems,
-}: // textColor = "light",
-NavbarProps) {
+  textColor = "light",
+}: NavbarProps) {
   const [search, setSearch] = useState("");
 
   const baseClass =
@@ -59,10 +59,10 @@ NavbarProps) {
     dark: "bg-gray-800 text-gray-100",
   };
 
-  // const textColorClass = {
-  //   light: "text-gray-100",
-  //   dark: "text-gray-900",
-  // };
+  const textColorClass = {
+    light: "text-white",
+    dark: "text-black",
+  };
 
   //
   const [isShowFSNav, setIsShowFSNav] = useState<boolean>(false);
@@ -75,9 +75,11 @@ NavbarProps) {
           backDropBlur && "backdrop-blur"
         } ${stickyTop && "fixed top-0 left-0 right-0"} ${bg && bgClass[bg]}`}
       >
-        <div className="flex gap-2">
+        <div className="flex gap-4 items-center">
           {logo}
-          <h5 className="font-bold text-xl">{title}</h5>
+          <h5 className={`font-bold text-xl ${textColorClass[textColor]}`}>
+            {title}
+          </h5>
         </div>
         {withSearchBar && (
           <div className="w-1/3 text-gray-800 relative hidden lg:block">
@@ -96,9 +98,9 @@ NavbarProps) {
           </div>
         )}
         <div className="hidden lg:block">
-          <ul className="flex gap-5 font-medium">
-            {links.map((link) => (
-              <li>
+          <ul className={`flex gap-5 font-medium ${textColorClass[textColor]}`}>
+            {links.map((link, index) => (
+              <li key={index}>
                 <NavLink
                   to={link.to}
                   className={({ isActive }) =>
