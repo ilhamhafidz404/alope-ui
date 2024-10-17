@@ -31,10 +31,11 @@ export default function NavbarSearchBox({
       <div
         className={`absolute w-full shadow shadow-indigo-500/30 mt-7 left-0 right-0 rounded-md after:border-[10px] after:border-indigo-500 after:content-[''] after:border-t-transparent after:border-r-transparent after:border-l-transparent after:absolute after:-top-5 after:left-5 ${bgClasses[bg]}`}
       >
-        {searchItems.slice(0, 3).map((item) => (
+        {searchItems.slice(0, 3).map((item, index) => (
           <NavLink
+            key={index}
             to={item.actionClick}
-            className={`flex md:flex-row flex-col gap-4 items-center p-3 ${bgClasses[bg]}`}
+            className={`flex md:flex-row flex-col gap-4 items-center rounded-t-md p-3 ${bgClasses[bg]}`}
           >
             <img
               src={item.img}

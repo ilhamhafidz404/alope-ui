@@ -25,7 +25,11 @@ export default function NavbarFullscreeenNav({
   hiddenFullscreenNav,
 }: NavbarProps) {
   const bgClass =
-    bg === "dark" ? "bg-gray-800 text-gray-100" : "bg-white text-gray-900";
+    bg === "dark"
+      ? "bg-gray-800 text-gray-100"
+      : bg === "light"
+      ? "bg-white text-gray-900"
+      : "backdrop-blur-3xl text-white";
   const translateClass = isShow ? "translate-y-0" : "-translate-y-full";
 
   return (

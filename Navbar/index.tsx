@@ -87,7 +87,7 @@ export default function Navbar({
               name="wef"
               type="text"
               placeholder="Search your favorite"
-              leftIcon={<SearchIcon />}
+              leftIcon={<SearchIcon color={"text-gray-900"} />}
               onChangeValue={(e) => setSearch(e)}
             />
             <NavbarSearchBox
@@ -120,20 +120,32 @@ export default function Navbar({
           {withSearchBar && (
             <button
               className={`p-1 rounded-md cursor-pointer ${
-                bg == "dark" ? "hover:bg-gray-700" : "hover:bg-gray-200"
+                bg == "dark"
+                  ? "hover:bg-gray-700"
+                  : bg == "light"
+                  ? "hover:bg-gray-200"
+                  : "hover:bg-gray-200/10"
               }`}
               onClick={() => setIsShowDialogSearch(!isShowDialogSearch)}
             >
-              <SearchIcon />
+              <SearchIcon color={textColorClass[textColor]} />
             </button>
           )}
           <div
             className={`p-1 rounded-md cursor-pointer ${
-              bg == "dark" ? "hover:bg-gray-700" : "hover:bg-gray-200"
+              bg == "dark"
+                ? "hover:bg-gray-700"
+                : bg == "light"
+                ? "hover:bg-gray-200"
+                : "hover:bg-gray-200/10"
             }`}
             onClick={() => setIsShowFSNav(!isShowFSNav)}
           >
-            {!isShowFSNav ? <HamburgerIcon /> : <CloseIcon />}
+            {!isShowFSNav ? (
+              <HamburgerIcon color={textColorClass[textColor]} />
+            ) : (
+              <CloseIcon color={textColorClass[textColor]} />
+            )}
           </div>
         </div>
       </nav>
@@ -159,14 +171,14 @@ export default function Navbar({
   );
 }
 
-const SearchIcon = () => {
+const SearchIcon = ({ color }: { color: string }) => {
   return (
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="size-6"
+        className={`size-6 ${color}`}
       >
         <path
           fillRule="evenodd"
@@ -178,7 +190,7 @@ const SearchIcon = () => {
   );
 };
 
-const HamburgerIcon = () => {
+const HamburgerIcon = ({ color }: { color: string }) => {
   return (
     <>
       <svg
@@ -187,7 +199,7 @@ const HamburgerIcon = () => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="size-6"
+        className={`size-6 ${color}`}
       >
         <path
           strokeLinecap="round"
@@ -199,7 +211,7 @@ const HamburgerIcon = () => {
   );
 };
 
-const CloseIcon = () => {
+const CloseIcon = ({ color }: { color: string }) => {
   return (
     <>
       <svg
@@ -208,7 +220,7 @@ const CloseIcon = () => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="size-6"
+        className={`size-6 ${color}`}
       >
         <path
           strokeLinecap="round"
