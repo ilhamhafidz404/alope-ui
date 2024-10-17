@@ -4,13 +4,14 @@ ALOPE UI is a simple and flexible component library for your React project. It i
 
 Components:
 
-- [Alert](https://github.com/ilhamhafidz404/alope-ui)
-- [Button](https://github.com/ilhamhafidz404/alope-ui)
-- [Card](https://github.com/ilhamhafidz404/alope-ui)
-- [Form](https://github.com/ilhamhafidz404/alope-ui)
-- [Navbar](https://github.com/ilhamhafidz404/alope-ui)
-- [Table](https://github.com/ilhamhafidz404/alope-ui)
-- [Toast](https://github.com/ilhamhafidz404/alope-ui)
+- [Alert](https://github.com/ilhamhafidz404/alope-ui#alert)
+- [Button](https://github.com/ilhamhafidz404/alope-ui#button)
+- [Card](https://github.com/ilhamhafidz404/alope-ui#card)
+- [Form](https://github.com/ilhamhafidz404/alope-ui#form)
+- [Header](https://github.com/ilhamhafidz404/alope-ui#header)
+- [Navbar](https://github.com/ilhamhafidz404/alope-ui#navbar)
+- [Table](https://github.com/ilhamhafidz404/alope-ui#table)
+- [Toast](https://github.com/ilhamhafidz404/alope-ui#toast)
 
 ## Instalation Guide
 
@@ -236,8 +237,40 @@ import Select from "alope-ui/Select";
 />
 ```
 
+### HEADER
+
+⚠️Requirement import
+
+```jsx
+import Input from "alope-ui/Header";
+```
+
+- Simple Input
+
+```jsx
+<Header
+  bgUrls={["...". "..."]}
+  logoUrl="..."
+  title="ALOPE UI is The Best "
+  description="ALOPE UI is a simple and flexible component library for your React project. It is built with Vite, ESLint, Tailwind CSS, and uses Heroicons for icons, enabling fast development and clean code."
+  actions={[
+    {
+      placeholder: "Action 1",
+      buttonColor: "primary",
+      to: "/",
+    },
+    {
+      placeholder: "Action 2",
+      buttonColor: "light",
+      to: "/",
+    },
+  ]}
+/>
+```
+
 ### NAVBAR
 
+⚠️Important: Please setup your project with react-router-dom first!
 ⚠️Requirement import
 
 ```jsx

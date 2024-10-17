@@ -86,7 +86,10 @@ function App() {
           element={
             <>
               <Header
-                bgUrl="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                bgUrls={[
+                  "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  "https://images.unsplash.com/photo-1728412389947-da908fb5dfff?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                ]}
                 logoUrl="https://kuninganbeu.kuningankab.go.id/images/logo/KuninganBeu_Putih.png"
                 title="Lorem "
                 description="Lorem "
@@ -113,7 +116,10 @@ function App() {
               <h1 className="text-3xl font-bold">🚀ALOPE UI</h1>
 
               <Header
-                bgUrl="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                bgUrls={[
+                  "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                  "https://images.unsplash.com/photo-1728412389947-da908fb5dfff?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                ]}
                 logoUrl="https://hybrid.uniku.ac.id/pluginfile.php/1/core_admin/logo/0x200/1728397345/HYBRID%20LEARNING%20%281%29.png"
                 title="Lorem ipsum dolor sit amet consectetur adipisicing elit."
                 description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora facere suscipit placeat eligendi doloremque. Aspernatur, culpa officiis ipsam facere saepe at perferendis est. Corporis adipisci at quibusdam saepe reprehenderit harum!"
