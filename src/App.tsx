@@ -91,11 +91,11 @@ function App() {
                   "https://images.unsplash.com/photo-1728412389947-da908fb5dfff?q=80&w=1980&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 ]}
                 logoUrl="https://kuninganbeu.kuningankab.go.id/images/logo/KuninganBeu_Putih.png"
-                title="Lorem "
-                description="Lorem "
+                title="Connect, Collaboration, Commerce"
+                description="Komite Ekraf Purwakarta, sebuah badan independen non-pemerintah yang dibentuk oleh kepala daerah, kini memiliki tugas strategis dalam menyokong program pembangunan ekonomi daerah di sektor industri kreatif. dengan anggota Komunitas kreatif, Akademisi, Praktisi, Pengusaha dan Media. Komite Ekraf diharapkan ikut merencanakan serta mendampingi pelaku ekonomi kreatif di masyarakat kabupaten Purwakarta."
                 actions={[
                   {
-                    placeholder: "Test",
+                    placeholder: "Test Lagi nih",
                     buttonColor: "primary",
                     to: "/",
                   },
