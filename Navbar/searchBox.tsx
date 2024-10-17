@@ -27,7 +27,8 @@ export default function NavbarSearchBox({
   };
 
   return (
-    search && (
+    search &&
+    (searchItems.length ? (
       <div
         className={`absolute w-full shadow shadow-indigo-500/30 mt-7 left-0 right-0 rounded-md after:border-[10px] after:border-indigo-500 after:content-[''] after:border-t-transparent after:border-r-transparent after:border-l-transparent after:absolute after:-top-5 after:left-5 ${bgClasses[bg]}`}
       >
@@ -70,6 +71,8 @@ export default function NavbarSearchBox({
           </svg>
         </a>
       </div>
-    )
+    ) : (
+      ""
+    ))
   );
 }
