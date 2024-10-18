@@ -1892,6 +1892,10 @@ video {
     display: none;
   }
 
+  .lg\:\!hidden {
+    display: none !important;
+  }
+
   .lg\:flex-row {
     flex-direction: row;
   }

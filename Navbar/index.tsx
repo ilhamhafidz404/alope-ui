@@ -116,7 +116,7 @@ export default function Navbar({
           </ul>
         </div>
         {/*  */}
-        <div className="lg:hidden flex gap-5">
+        <div className="lg:!hidden flex gap-5">
           {withSearchBar && (
             <button
               className={`p-1 rounded-md cursor-pointer ${
