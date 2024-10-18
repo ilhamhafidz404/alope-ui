@@ -34,7 +34,9 @@ export default function Input({
       id={name.toLowerCase()}
       name={name}
       type={type}
-      className={`py-2.5 px-3 peer ${commonInputClass} ${leftIcon && "pl-12"}`}
+      className={`py-2.5 pr-3 peer ${commonInputClass} ${
+        leftIcon ? "pl-12" : "pl-3"
+      }`}
       placeholder={
         floatingLabel ? "   " : !floatingLabel && placeholder ? placeholder : ""
       }

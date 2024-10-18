@@ -22,8 +22,10 @@ export default function Select({ name, labelText, options }: SelectProps) {
         <option value="" selected hidden>
           Select {name}
         </option>
-        {options.map((option) => (
-          <option value={option.value}>{option.name}</option>
+        {options.map((option, index) => (
+          <option key={index} value={option.value}>
+            {option.name}
+          </option>
         ))}
       </select>
     </div>
