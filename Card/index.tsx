@@ -11,6 +11,7 @@ type CardProps = {
   button?: ReactNode;
   secondaryButton?: ReactNode;
   secondaryButtonOnLeft?: boolean;
+  forceSameHeight?: boolean;
 };
 
 export default function Card({
@@ -22,6 +23,7 @@ export default function Card({
   button,
   secondaryButton,
   secondaryButtonOnLeft = false,
+  forceSameHeight = false,
 }: CardProps) {
   return (
     <div>
@@ -35,7 +37,9 @@ export default function Card({
           <img
             src={image}
             alt={title}
-            className="rounded-md w-full max-h-[250px] object-cover"
+            className={`rounded-md w-full max-h-[250px] object-cover ${
+              forceSameHeight && "min-h-[250px]"
+            }`}
           />
         )}
         <div className="mt-4">
