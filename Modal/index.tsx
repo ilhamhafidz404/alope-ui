@@ -13,7 +13,7 @@ interface ModalProps extends BaseModalProps {
 
 interface CustomModalProps extends BaseModalProps {
   body: ReactNode;
-  footer: ReactNode;
+  footer?: ReactNode;
 }
 
 const sizeClasses = {
@@ -63,7 +63,7 @@ export function CustomModal({
         </div>
         <hr className="my-5" />
         <div>{body}</div>
-        <div className="mt-5">{footer}</div>
+        {footer && <div className="mt-5">{footer}</div>}
       </div>
     </div>
   );
