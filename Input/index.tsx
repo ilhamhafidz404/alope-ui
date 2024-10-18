@@ -24,7 +24,7 @@ export default function Input({
   onChangeValue,
 }: InputProps) {
   const commonInputClass =
-    "w-full md:text-sm text-xs rounded-md border focus:outline-none focus:ring-0 focus:border-blue-600";
+    "w-full md:text-sm text-xs rounded-md border focus:outline-none focus:ring-0 focus:border-blue-600 bg-gray-50";
 
   const baseIconClass =
     "absolute -translate-y-1/2 h-full flex items-center p-3 top-1/2";
@@ -36,7 +36,7 @@ export default function Input({
       type={type}
       className={`py-2.5 px-3 peer ${commonInputClass} ${leftIcon && "pl-12"}`}
       placeholder={
-        floatingLabel ? " " : !floatingLabel && placeholder ? placeholder : ""
+        floatingLabel ? "   " : !floatingLabel && placeholder ? placeholder : ""
       }
       onChange={(e) => {
         if (onChangeValue) {

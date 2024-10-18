@@ -8,6 +8,7 @@ import Alert from "../Alert";
 import Toast from "../Toast";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
+import { Modal, CustomModal } from "../Modal";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
@@ -19,6 +20,27 @@ function App() {
   ];
 
   const [toast, setToast] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [showCustomModal, setShowCustomModal] = useState(false);
+
+  const handleSubmitFilter = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const target = e.target as HTMLFormElement;
+    const subsektorValue = (
+      target.elements.namedItem("subsektor") as HTMLSelectElement
+    ).value;
+
+    // Membuat objek URLSearchParams untuk memodifikasi query string
+    const params = new URLSearchParams(window.location.search);
+    params.set("subsektor", subsektorValue); // Tambahkan atau update parameter subsektor
+
+    // Push state ke URL tanpa reload
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    window.history.pushState({}, "", newUrl);
+
+    setShowModal(false);
+  };
 
   return (
     <>
@@ -107,6 +129,52 @@ function App() {
                   },
                 ]}
               />
+
+              <section>
+                <button onClick={() => setShowModal(true)}>Show Modal</button>
+                <button onClick={() => setShowCustomModal(true)}>
+                  Show Custom Modal
+                </button>
+                <CustomModal
+                  isShow={showCustomModal}
+                  onCloseAction={() => setShowCustomModal(false)}
+                  body={
+                    <form method="GET" onSubmit={(e) => handleSubmitFilter(e)}>
+                      <Select
+                        name="subsektor"
+                        options={[
+                          {
+                            name: "text",
+                            value: "test",
+                          },
+                        ]}
+                      />
+                      <div className="mt-5">
+                        <Button text="Filter" color="primary" fullWidth />
+                      </div>
+                    </form>
+                  }
+                  footer={<p>Test</p>}
+                />
+                <Modal
+                  isShow={showModal}
+                  onCloseAction={() => setShowModal(false)}
+                  bodyText={"uwiegfuiewf"}
+                  size="sm"
+                />
+                <Modal
+                  isShow={showModal}
+                  onCloseAction={() => setShowModal(false)}
+                  bodyText={"uwiegfuiewf"}
+                  size="md"
+                />
+                <Modal
+                  isShow={showModal}
+                  onCloseAction={() => setShowModal(false)}
+                  bodyText={"uwiegfuiewf"}
+                  size="lg"
+                />
+              </section>
 
               <Footer
                 imgUrlLogo="https://kuninganbeu.kuningankab.go.id/images/logo/KuninganBeu_Putih.png"
@@ -969,6 +1037,53 @@ function App() {
                   },
                 ]}
               />
+
+              {/*  */}
+              <section>
+                <button onClick={() => setShowModal(true)}>Show Modal</button>
+                <button onClick={() => setShowCustomModal(true)}>
+                  Show Custom Modal
+                </button>
+                <CustomModal
+                  isShow={showCustomModal}
+                  onCloseAction={() => setShowCustomModal(false)}
+                  body={
+                    <form method="GET" onSubmit={(e) => handleSubmitFilter(e)}>
+                      <Select
+                        name="subsektor"
+                        options={[
+                          {
+                            name: "text",
+                            value: "test",
+                          },
+                        ]}
+                      />
+                      <div className="mt-5">
+                        <Button text="Filter" color="primary" fullWidth />
+                      </div>
+                    </form>
+                  }
+                  footer={<p>Test</p>}
+                />
+                <Modal
+                  isShow={showModal}
+                  onCloseAction={() => setShowModal(false)}
+                  bodyText={"uwiegfuiewf"}
+                  size="sm"
+                />
+                <Modal
+                  isShow={showModal}
+                  onCloseAction={() => setShowModal(false)}
+                  bodyText={"uwiegfuiewf"}
+                  size="md"
+                />
+                <Modal
+                  isShow={showModal}
+                  onCloseAction={() => setShowModal(false)}
+                  bodyText={"uwiegfuiewf"}
+                  size="lg"
+                />
+              </section>
             </div>
           }
         />

@@ -10,6 +10,7 @@ Components:
 - [Form](https://github.com/ilhamhafidz404/alope-ui#form)
 - [Footer](https://github.com/ilhamhafidz404/alope-ui#footer)
 - [Header](https://github.com/ilhamhafidz404/alope-ui#header)
+- [Modal](https://github.com/ilhamhafidz404/alope-ui#modal)
 - [Navbar](https://github.com/ilhamhafidz404/alope-ui#navbar)
 - [Table](https://github.com/ilhamhafidz404/alope-ui#table)
 - [Toast](https://github.com/ilhamhafidz404/alope-ui#toast)
@@ -238,7 +239,7 @@ import Select from "alope-ui/Select";
 />
 ```
 
-### ALERT
+### Footer
 
 ⚠️Requirement import
 
@@ -283,7 +284,7 @@ import Footer from "alope-ui/Footer";
 ⚠️Requirement import
 
 ```jsx
-import Input from "alope-ui/Header";
+import Header from "alope-ui/Header";
 ```
 
 - Simple Input
@@ -309,9 +310,128 @@ import Input from "alope-ui/Header";
 />
 ```
 
+### MODAL
+
+⚠️Requirement import
+
+```jsx
+import { Modal, CustomModal } from "../Modal";
+```
+
+- Simple Modal
+
+```jsx
+const [showModal, setShowModal] = useState(false);
+
+<Modal
+  isShow={showModal}
+  onCloseAction={() => setShowModal(false)}
+  bodyText={"uwiegfuiewf"}
+  size="md"
+/>;
+```
+
+- Custom Modal
+
+```jsx
+const [showCustomModal, setShowCustomModal] = useState(false);
+
+const handleSubmitFilter = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const target = e.target as HTMLFormElement;
+  const subsektorValue = (
+    target.elements.namedItem("subsektor") as HTMLSelectElement
+  ).value;
+
+  const params = new URLSearchParams(window.location.search);
+  params.set("subsektor", subsektorValue);
+
+  const newUrl = `${window.location.pathname}?${params.toString()}`;
+  window.history.pushState({}, "", newUrl);
+
+  setShowModal(false);
+};
+
+<CustomModal
+  isShow={showCustomModal}
+  onCloseAction={() => setShowCustomModal(false)}
+  body={
+    <form method="GET" onSubmit={(e) => handleSubmitFilter(e)}>
+      <Select
+        name="Param"
+        options={[
+          {
+            name: "param",
+            value: "valueParam",
+          },
+        ]}
+      />
+      <div className="mt-5">
+        <Button text="Filter" color="primary" fullWidth />
+      </div>
+    </form>
+  }
+  footer={<p>Alope UI is the Best</p>}
+/>
+```
+
+- Navbar with Search
+
+```jsx
+<Navbar
+  title={"ALOPE"}
+  logo={...}
+  links={[
+    {
+      placeholder: "Home",
+      to: "/",
+    },
+    {
+      placeholder: "About",
+      to: "/about",
+    },
+    {
+      placeholder: "Product",
+      to: "/product",
+    },
+  ]}
+  stickyTop
+  bg={"transparent"}
+  withSearchBar
+  searchItems={[
+    {
+      img: "...",
+      title: "Title Card",
+      description: "description",
+      actionClick: "/",
+    },
+    {
+      img: "...",
+      title: "Title Card",
+      description: "description",
+      actionClick: "/",
+    },
+    {
+      img: "...",
+      title: "Title Card",
+      description: "description",
+      actionClick: "/",
+    },
+    {
+      img: "...",
+      title: "Title Card",
+      description: "description",
+      actionClick: "/",
+    },
+  ]}
+/>
+```
+
 ### NAVBAR
 
 ⚠️Important: Please setup your project with react-router-dom first!
+<br/>
 ⚠️Requirement import
 
 ```jsx

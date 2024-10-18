@@ -17,7 +17,6 @@ export default function Select({ name, labelText, options }: SelectProps) {
       <label htmlFor={name}>{labelText}</label>
       <select
         name={name}
-        id=""
         className="w-full text-sm rounded-md border focus:outline-none focus:ring-0 focus:border-blue-600 py-2.5 px-3"
       >
         <option value="" selected hidden>
