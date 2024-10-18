@@ -8,6 +8,7 @@ Components:
 - [Button](https://github.com/ilhamhafidz404/alope-ui#button)
 - [Card](https://github.com/ilhamhafidz404/alope-ui#card)
 - [Form](https://github.com/ilhamhafidz404/alope-ui#form)
+- [Footer](https://github.com/ilhamhafidz404/alope-ui#footer)
 - [Header](https://github.com/ilhamhafidz404/alope-ui#header)
 - [Navbar](https://github.com/ilhamhafidz404/alope-ui#navbar)
 - [Table](https://github.com/ilhamhafidz404/alope-ui#table)
@@ -30,7 +31,7 @@ npm i alope-ui
 ⚠️Requirement import
 
 ```jsx
-<Alert text="lorem ipsum sit dolor" color="error" icon={...} />
+import Alert, ButtonIcon from "alope-ui/Alert";
 ```
 
 - Simple Alert
@@ -232,6 +233,46 @@ import Select from "alope-ui/Select";
     {
       value: "Amazing",
       name: "Amazing",
+    },
+  ]}
+/>
+```
+
+### ALERT
+
+⚠️Requirement import
+
+```jsx
+import Footer from "alope-ui/Footer";
+```
+
+```jsx
+<Footer
+  imgUrlLogo="..."
+  text="ALOPE UI"
+  bottomText="Copyright by ALOPE UI, since &copy; 2024"
+  links={[
+    {
+      to: "https://instagram.com",
+      placeholder: "Intagram",
+    },
+    {
+      to: "/",
+      placeholder: (
+        <img src="TiktokLogo.png" className="min-w-[50px] max-w-[50px]" />
+      ),
+    },
+    {
+      to: "/",
+      placeholder: <YoutubeIcon />,
+    },
+    {
+      to: "",
+      placeholder: (
+        <span className="flex gap-2 items-center">
+          <XIcon />X
+        </span>
+      ),
     },
   ]}
 />
