@@ -725,6 +725,10 @@ video {
   display: flex;
 }
 
+.inline-flex {
+  display: inline-flex;
+}
+
 .table {
   display: table;
 }
@@ -1767,6 +1771,10 @@ video {
     margin-right: 4rem;
   }
 
+  .md\:flex {
+    display: flex;
+  }
+
   .md\:size-44 {
     width: 11rem;
     height: 11rem;
@@ -1779,6 +1787,10 @@ video {
 
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
   }
 
   .md\:p-5 {
@@ -1803,6 +1815,11 @@ video {
   .md\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
