@@ -62,7 +62,7 @@ export default function Header({
         )}
         <h1 className="md:text-4xl text-3xl font-semibold">{title}</h1>
         <p className="mt-5 text-gray-200 md:text-base text-sm">{description}</p>
-        <div className="flex gap-3 justify-center mt-10">
+        <div className="md:flex inline-flex gap-3 md:flex-row flex-col justify-center mt-10">
           {actions?.length &&
             actions.map((action) => (
               <Button

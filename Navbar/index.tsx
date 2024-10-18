@@ -77,7 +77,7 @@ export default function Navbar({
       >
         <div className="flex gap-4 items-center">
           {logo}
-          <h5 className={`font-bold text-xl ${textColorClass[textColor]}`}>
+          <h5 className={`font-bold md:text-xl ${textColorClass[textColor]}`}>
             {title}
           </h5>
         </div>
