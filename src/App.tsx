@@ -31,11 +31,9 @@ function App() {
       target.elements.namedItem("subsektor") as HTMLSelectElement
     ).value;
 
-    // Membuat objek URLSearchParams untuk memodifikasi query string
     const params = new URLSearchParams(window.location.search);
-    params.set("subsektor", subsektorValue); // Tambahkan atau update parameter subsektor
+    params.set("subsektor", subsektorValue);
 
-    // Push state ke URL tanpa reload
     const newUrl = `${window.location.pathname}?${params.toString()}`;
     window.history.pushState({}, "", newUrl);
 
@@ -71,6 +69,7 @@ function App() {
         bg={"transparent"}
         withSearchBar
         textColor="light"
+        changeTextColorAfterScroll={500}
         searchItems={[
           {
             img: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

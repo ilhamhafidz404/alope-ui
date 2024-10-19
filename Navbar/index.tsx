@@ -1,4 +1,4 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import NavbarSearchBox from "./searchBox";
 import NavbarFullscreeenNav from "./fullscreeenNav";
@@ -29,6 +29,7 @@ type NavbarProps = {
   withSearchBar?: boolean;
   searchItems?: searchItems[];
   textColor?: "dark" | "light";
+  changeTextColorAfterScroll?: number;
 };
 
 export default function Navbar({
@@ -41,6 +42,7 @@ export default function Navbar({
   withSearchBar = false,
   searchItems,
   textColor = "light",
+  changeTextColorAfterScroll = 0,
 }: NavbarProps) {
   const [search, setSearch] = useState("");
 
@@ -64,6 +66,29 @@ export default function Navbar({
     dark: "text-black",
   };
 
+  const getOppositeColor = (color: string) => {
+    return color === "light" ? "dark" : "light";
+  };
+
+  const [changeTextColor, setChangeTextColor] = useState(false);
+  const handleScroll = () => {
+    if (window.scrollY > changeTextColorAfterScroll) {
+      setChangeTextColor(true);
+    } else {
+      setChangeTextColor(false);
+    }
+  };
+
+  useEffect(() => {
+    if (changeTextColorAfterScroll) {
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, []);
+
   //
   const [isShowFSNav, setIsShowFSNav] = useState<boolean>(false);
   const [isShowDialogSearch, setIsShowDialogSearch] = useState<boolean>(false);
@@ -77,7 +102,13 @@ export default function Navbar({
       >
         <div className="flex gap-4 items-center">
           {logo}
-          <h5 className={`font-bold md:text-xl ${textColorClass[textColor]}`}>
+          <h5
+            className={`font-bold md:text-xl ${
+              !changeTextColor
+                ? textColorClass[textColor]
+                : textColorClass[getOppositeColor(textColor)]
+            }`}
+          >
             {title}
           </h5>
         </div>
@@ -98,7 +129,13 @@ export default function Navbar({
           </div>
         )}
         <div className="hidden lg:block">
-          <ul className={`flex gap-5 font-medium ${textColorClass[textColor]}`}>
+          <ul
+            className={`flex gap-5 font-medium ${
+              !changeTextColor
+                ? textColorClass[textColor]
+                : textColorClass[getOppositeColor(textColor)]
+            }`}
+          >
             {links.map((link, index) => (
               <li key={index}>
                 <NavLink
@@ -128,7 +165,13 @@ export default function Navbar({
               }`}
               onClick={() => setIsShowDialogSearch(!isShowDialogSearch)}
             >
-              <SearchIcon color={textColorClass[textColor]} />
+              <SearchIcon
+                color={
+                  !changeTextColor
+                    ? textColorClass[textColor]
+                    : textColorClass[getOppositeColor(textColor)]
+                }
+              />
             </button>
           )}
           <div
@@ -142,9 +185,21 @@ export default function Navbar({
             onClick={() => setIsShowFSNav(!isShowFSNav)}
           >
             {!isShowFSNav ? (
-              <HamburgerIcon color={textColorClass[textColor]} />
+              <HamburgerIcon
+                color={
+                  !changeTextColor
+                    ? textColorClass[textColor]
+                    : textColorClass[getOppositeColor(textColor)]
+                }
+              />
             ) : (
-              <CloseIcon color={textColorClass[textColor]} />
+              <CloseIcon
+                color={
+                  !changeTextColor
+                    ? textColorClass[textColor]
+                    : textColorClass[getOppositeColor(textColor)]
+                }
+              />
             )}
           </div>
         </div>
