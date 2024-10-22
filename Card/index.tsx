@@ -7,6 +7,7 @@ type CardProps = {
   title: string;
   subtitle?: string;
   description?: string;
+  icon?: ReactNode;
   ribbon?: string;
   button?: ReactNode;
   secondaryButton?: ReactNode;
@@ -19,6 +20,7 @@ export default function Card({
   title,
   subtitle,
   description,
+  icon,
   ribbon,
   button,
   secondaryButton,
@@ -27,7 +29,7 @@ export default function Card({
 }: CardProps) {
   return (
     <div>
-      <div className="relative max-w-[400px] shadow-2xl px-5 py-3 pb-7 rounded-md overflow-hidden">
+      <div className="relative max-w-[400px] shadow-xl px-5 py-3 pb-7 rounded-md overflow-hidden">
         {ribbon && (
           <span className="bg-red-500 text-white py-2 absolute top-3 -right-[70px] rotate-45 md:text-sm text-xs w-[200px] text-center">
             {ribbon}
@@ -42,13 +44,24 @@ export default function Card({
             }`}
           />
         )}
-        <div className="mt-4">
+        {icon && (
+          <span className="bg-indigo-500 w-[50px] h-[50px] inline-flex items-center justify-center rounded-full mt-5 text-white">
+            {icon}
+          </span>
+        )}
+        <div className={icon ? "mt-2" : "mt-4"}>
           <h5 className="text-xl font-semibold">{title}</h5>
           {subtitle && (
             <p className="text-sm text-gray-800 italic">{subtitle}</p>
           )}
           {description && (
-            <p className="mt-3 mb-5 text-sm text-gray-800">{description}</p>
+            <p
+              className={`mt-3 text-sm text-gray-800 ${
+                (button || secondaryButton) && "mb-5"
+              }`}
+            >
+              {description}
+            </p>
           )}
           <div className="flex gap-2">
             {secondaryButtonOnLeft && secondaryButton}
