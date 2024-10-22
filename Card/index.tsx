@@ -28,8 +28,8 @@ export default function Card({
   forceSameHeight = false,
 }: CardProps) {
   return (
-    <div>
-      <div className="relative max-w-[400px] shadow-xl px-5 py-3 pb-7 rounded-md overflow-hidden">
+    <>
+      <div className="relative max-w-[400px] bg-white shadow-xl px-5 py-3 pb-7 rounded-md overflow-hidden">
         {ribbon && (
           <span className="bg-red-500 text-white py-2 absolute top-3 -right-[70px] rotate-45 md:text-sm text-xs w-[200px] text-center">
             {ribbon}
@@ -70,6 +70,6 @@ export default function Card({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
