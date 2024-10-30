@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 import "./../assets/style.css";
+import { Link } from "react-router-dom";
 
 type ButtonProps = {
   text: string;
@@ -12,6 +13,7 @@ type ButtonProps = {
   iconLeft?: ReactNode;
   iconRight?: ReactNode;
   addedClass?: string;
+  to?: string;
 };
 
 function Button({
@@ -23,6 +25,7 @@ function Button({
   iconLeft,
   iconRight,
   addedClass,
+  to,
 }: ButtonProps) {
   const widthClasses = fullWidth ? "w-full" : "";
 
@@ -59,7 +62,16 @@ function Button({
     lg: "px-6 py-3 text-xl",
   };
 
-  return (
+  return to ? (
+    <Link
+      to={to}
+      className={`${colorClasses[color]} ${sizeClasses[size]} ${widthClasses} rounded active:scale-95 flex gap-2 items-center justify-center ${addedClass}`}
+    >
+      {iconLeft}
+      {text}
+      {iconRight}
+    </Link>
+  ) : (
     <button
       className={`${colorClasses[color]} ${sizeClasses[size]} ${widthClasses} rounded active:scale-95 flex gap-2 items-center justify-center ${addedClass}`}
     >

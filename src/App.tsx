@@ -683,7 +683,12 @@ function App() {
                         subtitle="ini subtitle"
                         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente minima praesentium numquam ut nobis omnis similiq"
                         button={
-                          <Button text={"Detail"} color="primary" fullWidth />
+                          <Button
+                            text={"Detail"}
+                            color="primary"
+                            fullWidth
+                            to="/detail"
+                          />
                         }
                       />
                     </div>
