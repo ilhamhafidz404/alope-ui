@@ -752,6 +752,27 @@ function App() {
                 </div>
               </section>
 
+              <section className="grid grid-cols-2">
+                <Card
+                  title="Card Title"
+                  subtitle="ini subtitle"
+                  description="Lorem"
+                  fullWidth
+                />
+                <Card
+                  title="Card Title"
+                  subtitle="ini subtitle"
+                  description="Lorem"
+                  fullWidth
+                />
+                <Card
+                  title="Card Title"
+                  subtitle="ini subtitle"
+                  description="Lorem"
+                  fullWidth
+                />
+              </section>
+
               <section className="mb-5">
                 <h2 className="text-2xl font-bold">Table</h2>
                 <div className="mt-8">

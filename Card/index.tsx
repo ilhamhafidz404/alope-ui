@@ -13,6 +13,7 @@ type CardProps = {
   secondaryButton?: ReactNode;
   secondaryButtonOnLeft?: boolean;
   forceSameHeight?: boolean;
+  fullWidth?: boolean;
 };
 
 export default function Card({
@@ -26,10 +27,15 @@ export default function Card({
   secondaryButton,
   secondaryButtonOnLeft = false,
   forceSameHeight = false,
+  fullWidth = false,
 }: CardProps) {
   return (
     <>
-      <div className="relative max-w-[400px] bg-white shadow-xl px-5 py-3 pb-7 rounded-md overflow-hidden">
+      <div
+        className={`relative bg-white shadow-xl px-5 py-3 pb-7 rounded-md overflow-hidden ${
+          fullWidth ? "w-full" : "max-w-[400px]"
+        }`}
+      >
         {ribbon && (
           <span className="bg-red-500 text-white py-2 absolute top-3 -right-[70px] rotate-45 md:text-sm text-xs w-[200px] text-center">
             {ribbon}
