@@ -58,7 +58,7 @@ export default function Navbar({
   const bgClass = {
     transparent: "bg-transparent",
     light: "bg-gray-100",
-    dark: "bg-gray-800 text-gray-100",
+    dark: "bg-[#0e1317] text-gray-100",
   };
 
   const textColorClass = {

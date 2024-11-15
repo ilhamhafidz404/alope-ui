@@ -66,7 +66,7 @@ function App() {
         ]}
         stickyTop
         backDropBlur
-        bg={"transparent"}
+        bg={"dark"}
         withSearchBar
         textColor="light"
         changeTextColorAfterScroll={500}
