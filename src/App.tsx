@@ -175,6 +175,32 @@ function App() {
                 />
               </section>
 
+              <Card
+                image="https://images.unsplash.com/photo-1719937206300-fc0dac6f8cac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                title="Card Title"
+                subtitle="ini subtitle"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente minima praesentium numquam ut nobis omnis similiq"
+                forceSameHeight
+                type="horizontal"
+              />
+              <div className="grid grid-cols-2 gap-7">
+                <Card
+                  image="https://images.unsplash.com/photo-1719937206300-fc0dac6f8cac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  title="Card Title"
+                  subtitle="ini subtitle"
+                  forceSameHeight
+                  type="horizontal"
+                />
+                <Card
+                  image="https://images.unsplash.com/photo-1719937206300-fc0dac6f8cac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  title="Card Title"
+                  subtitle="ini subtitle"
+                  description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente minima praesentium numquam ut nobis omnis similiq"
+                  forceSameHeight
+                  type="horizontal"
+                />
+              </div>
+
               <Footer
                 imgUrlLogo="https://kuninganbeu.kuningankab.go.id/images/logo/KuninganBeu_Putih.png"
                 text="Connect, Collaboration, Commerce"
@@ -671,6 +697,15 @@ function App() {
                     title="Card Title"
                     subtitle="ini subtitle"
                     description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente minima praesentium numquam ut nobis omnis similiq"
+                  />
+
+                  <Card
+                    image="https://images.unsplash.com/photo-1719937206300-fc0dac6f8cac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    title="Card Title"
+                    subtitle="ini subtitle"
+                    description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente minima praesentium numquam ut nobis omnis similiq"
+                    forceSameHeight
+                    type="horizontal"
                   />
                 </div>
                 <div className="mt-8">
